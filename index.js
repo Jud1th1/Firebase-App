@@ -25,16 +25,21 @@ addButtonEl.addEventListener("click", function() {
 
 // call onValue function so we can use realtime snapshot
 onValue(shoppingListInDB, function(snapshot) {
-    let itemsArray = Object.entries(snapshot.val())
-    
-    clearShoppingListEl()
-     //for loop to show each item
-     for (let i = 0; i < itemsArray.length; i++) {
-        let currentItem = itemsArray[i]
-        let currentItemID = currentItem[0]
-        let currentItemValue = currentItem[1]
+
+    if (snapshot.exists()) { //this fixes our bug which prevents the last item from being removed
+        let itemsArray = Object.entries(snapshot.val())
         
-        appendItemToShoppingListEl(currentItem)
+        clearShoppingListEl()
+        //for loop to show each item
+        for (let i = 0; i < itemsArray.length; i++) {
+            let currentItem = itemsArray[i]
+            let currentItemID = currentItem[0]
+            let currentItemValue = currentItem[1]
+            
+            appendItemToShoppingListEl(currentItem)
+        }
+    } else {
+        shoppingListEl.innerHTML = "No items here... yet"
     }
 })
 

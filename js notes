@@ -99,3 +99,13 @@ const shoppingListInDB = ref(database, "shoppingList")
         // first import the remove function then you call it 
         remove(exactLocationOfItemInDB)
     }
+
+//13. Fix the bug that causes eveything but the last item remaining on the list to be deleted
+    //Error recieved: !TypeError: Cannot convert undefined or null to object
+        //the issue lies with our onValue that is where our code lies when we press the button to add to the list
+        //the last item will delete the shopping list reference and it causes the onValue function to fail because no snapshot exists 
+        //use the method snapchat.exist 
+
+          /* Challenge: Change the onValue code so that it uses snapshot.exists() 
+          to show items when there are items in the database and if there are not displays the text 'No items here... yet'.*/
+          if (snapshot.exists()) //put the remaining code inside of this and add else clause
