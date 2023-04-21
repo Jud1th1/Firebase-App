@@ -5,21 +5,31 @@ const appSettings = {
     databaseURL: "https://playground-7f16f-default-rtdb.firebaseio.com/"
 }
 
-const app = initializeApp
-
-// Get element
-const textField = document.getElementById("input-field");
-const addButtonEl = document.getElementById("add-button");
-
 const app = initializeApp(appSettings) //App variable with arguments to give the app settings we set up 
 const database = getDatabase(app) //Database variable that uses the getDatabse and passes in app
 const shoppingListInDB = ref(database, "shoppingList") //The reference 
+
+// Get element
+const inputFieldEl = document.getElementById("input-field")
+const addButtonEl = document.getElementById("add-button")
+const shoppingListEl = document.getElementById("shopping-list") //Add shopping list from html to js
 
 // add an event listener 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
     
     push(shoppingListInDB, inputValue)
+
+    clearInputFieldEl()
     
-    console.log(inputValue)
+    addToListEl(inputValue)
 })
+
+//add function to take in item and set value to empty string
+function clearInputFieldEl() {
+    inputFieldEl.value = ""
+}
+
+function addToListEl(itemValue) {
+    shoppingListEl.innerHTML += `<li>${itemValue}</li>`
+}

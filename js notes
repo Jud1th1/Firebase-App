@@ -22,4 +22,32 @@ const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shoppingList")
 
 //7. Inside of addButtonEl : Use the Firebase function 'push' to push inputValue to the database
-    database.push("inputValue")
+    push(shoppingListInDB, inputValue)
+
+//8. Write the js that will add our items to the dom - 
+    //Challenge: Append a new <li> with text content inputValue to the 'shopping-list' <ul>
+    //connect js+html
+    const shoppingListEl = document.getElementById("shopping-list")
+    //then add to button
+    shoppingListEl.innerHTML += `<li>${inputValue}</li>`
+    //Clear the input field when the button is pressed 
+    inputFieldEl.value = ""
+
+
+/******************* Tip: Pause and try to rewrite your code, also see if you can clean it up ***************************/
+
+//9. Challenge: Refactor the line below into its own function.
+    inputFieldEl.value = ""
+
+        //So create a function that takes in the input field element as an argument and sets its value to an empty string.
+    function clearInputField() {
+        inputFieldEl.value = "";
+      }
+
+    //Challenge: Refactor the line below into its own function.
+    shoppingListEl.innerHTML += `<li>${inputValue}</li>`
+      //create a function that takes in the shopping list element and input valu as arguments then appends a new li element 
+      function addToListEl(itemValue) {
+        shoppingListEl.innerHTML += `<li>${itemValue}</li>`
+      }
+    
