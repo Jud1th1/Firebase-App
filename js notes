@@ -1,0 +1,25 @@
+// 1. Get element
+const textField = document.getElementById("input-field");
+const addButtonEl = document.getElementById("add-button");
+
+// 2. add an event listener 
+addButtonEl.addEventListener("click", function() {
+    //console log the value of textField
+    let inputValue = inputFieldEl.value
+    console.log(inputValue)
+})
+
+//3. Add Firebase database link to js file at the top
+    //also import initalizeApp and getDatabase at the top 
+-	https://realtime-database-2ec3c-default-rtdb.firebaseio.com/
+    //don't forget to set your html js link to type="module"
+
+//4. Set up app variable and give it arguments to give the app settings we set up 
+//5. Set up a database variable that use the getDatabse and passes the app
+//6. Then set up the reference 
+const app = initializeApp(appSettings)
+const database = getDatabase(app)
+const shoppingListInDB = ref(database, "shoppingList")
+
+//7. Inside of addButtonEl : Use the Firebase function 'push' to push inputValue to the database
+    database.push("inputValue")
