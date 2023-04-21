@@ -51,3 +51,21 @@ const shoppingListInDB = ref(database, "shoppingList")
         shoppingListEl.innerHTML += `<li>${itemValue}</li>`
       }
     
+/* 10. Challenge:
+    Call the onValue function with
+    shoppingListInDB as the first argument (the reference) and
+    function(snapshot) {} as the second argument
+    */ 
+      onValue(shoppingListInDB, function (snapshot)){
+        // Challenge: Console log snapshot.val() to show all the items inside of shoppingList in the database
+        // p.s dont for to import onValue
+        console.log(snapshot.val())
+        // Challenge: Use Object.values() to convert snapshot.val() from an Object to an Array. Create a variable for this.
+        let itemsArray = Object.values(snapshot.val())
+        // Challenge: Write a for loop to iterate on itemsArray and console log each item
+        for (let i = 0; i < itemsArray.length; i++){
+            /* Challenge: Use the appendItemToShoppingListEl(itemValue) 
+            function inside of the for loop to append item to the shopping list element for each iteration.*/
+            appendItemToShoppingListEl(itemsArray[i])
+        }
+      }

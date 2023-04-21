@@ -1,5 +1,5 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import {getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import {getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://playground-7f16f-default-rtdb.firebaseio.com/"
@@ -21,9 +21,22 @@ addButtonEl.addEventListener("click", function() {
     push(shoppingListInDB, inputValue)
 
     clearInputFieldEl()
-    
-    addToListEl(inputValue)
 })
+
+// call onValue function so we can use realtime snapshot
+onValue(shoppingListInDB, function(snapshot) {
+    let itemsArray = Object.values(snapshot.val()) //make object an array
+
+    clearShoppingListEl()
+     //for loop to show each item
+    for (let i = 0; i < itemsArray.length; i++){
+        appendItemToShoppingListEl(itemsArray[i])
+    }
+})
+
+function clearShoppingListEl() {
+    shoppingListEl.innerHTML = ""
+}
 
 //add function to take in item and set value to empty string
 function clearInputFieldEl() {
