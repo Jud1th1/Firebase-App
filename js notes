@@ -67,5 +67,35 @@ const shoppingListInDB = ref(database, "shoppingList")
             /* Challenge: Use the appendItemToShoppingListEl(itemValue) 
             function inside of the for loop to append item to the shopping list element for each iteration.*/
             appendItemToShoppingListEl(itemsArray[i])
+            //Get item ID from database
+            let currentItem = itemsArray[i]
+            // Challenge: Make two let variables:
+            // currentItemID and currentItemValue and use currentItem to set both of
+            // them equal to the correct values.
+            let currentItemID = currentItem[0]
+            let currentItemValue = currentItem[1]
         }
       }
+
+//11. Replace innerHTML with createElement
+    // function appendItemToShoppingListEl(itemValue) {
+    // shoppingListEl.innerHTML += `<li>${itemValue}</li>`
+    let newEl = document.createElement("li")
+    
+    // Challenge: Make it so the item name shows instead of 'Something'
+    let itemID = item[0]
+    let itemValue = item[1]
+
+    newEl.textContent = itemValue
+    
+    shoppingListEl.append(newEl)
+
+//12. Remove items
+    // Challenge: Attach an event listener to newEl and make it so you console log the id of the item when it's pressed.
+    newEl.addEventListener("click", function()){
+        // Challenge: Make a let variable called 'exactLocationOfItemInDB' and set it equal to ref(database, something) where you substitute something with the code that will give you the exact location of the item in question.
+        let exactLocationOfItemInDB = ref(database, 'shoppingList/${itemID}')
+        // Challenge: Use the remove function to remove the item from the database
+        // first import the remove function then you call it 
+        remove(exactLocationOfItemInDB)
+    }

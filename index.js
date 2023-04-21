@@ -1,5 +1,5 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import {getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import {getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://playground-7f16f-default-rtdb.firebaseio.com/"
@@ -25,12 +25,16 @@ addButtonEl.addEventListener("click", function() {
 
 // call onValue function so we can use realtime snapshot
 onValue(shoppingListInDB, function(snapshot) {
-    let itemsArray = Object.values(snapshot.val()) //make object an array
-
+    let itemsArray = Object.entries(snapshot.val())
+    
     clearShoppingListEl()
      //for loop to show each item
-    for (let i = 0; i < itemsArray.length; i++){
-        appendItemToShoppingListEl(itemsArray[i])
+     for (let i = 0; i < itemsArray.length; i++) {
+        let currentItem = itemsArray[i]
+        let currentItemID = currentItem[0]
+        let currentItemValue = currentItem[1]
+        
+        appendItemToShoppingListEl(currentItem)
     }
 })
 
@@ -43,6 +47,18 @@ function clearInputFieldEl() {
     inputFieldEl.value = ""
 }
 
-function addToListEl(itemValue) {
-    shoppingListEl.innerHTML += `<li>${itemValue}</li>`
+function appendItemToShoppingListEl(item) {
+    let itemID = item[0]
+    let itemValue = item[1]
+    
+    let newEl = document.createElement("li")
+    
+    newEl.textContent = itemValue
+
+    newEl.addEventListener("click", function() { 
+        let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`) //to locate the item in question
+        remove(exactLocationOfItemInDB) //remove function to remove items from the database
+    })
+
+    shoppingListEl.append(newEl)
 }
