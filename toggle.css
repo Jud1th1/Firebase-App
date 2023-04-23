@@ -1,0 +1,249 @@
+
+label
+{
+    display: block;
+    position: absolute;
+    top: 7%;
+    right: 2%;
+    width: 75px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #ffcdb2;
+    border-radius: 56px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.3s ease background-color;
+    overflow: hidden;
+}
+
+/***************** Peaches CSS *******************/
+#peaches
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
+    z-index: 1;
+}
+
+.leaves{
+  position: absolute;
+  background-color: #40916c;
+  width: 10px;
+  height: 10px;
+  top: 3px;
+  left: 20px;
+  clip-path: polygon(38% 8%, 59% 29%, 62% 100%, 14% 53%, 13% 0);
+}
+
+.leaves2{
+  position: absolute;
+  background-color: #40916c;
+  width: 10px;
+  height: 10px;
+  top: 5px;
+  left: 25px;
+  clip-path: polygon(48% 18%, 100% 0%, 89% 61%, 0% 100%);
+}
+
+.stem{
+  position: absolute;
+  background-color: #7f5539;
+  width: 12px;
+  height: 10px;
+  top: 6px;
+  left: 22px;
+  clip-path: polygon(33% 0, 55% 0, 53% 100%, 0% 100%);
+}
+
+.peach {
+  position: absolute;
+  background: radial-gradient(circle, rgba(244,162,97,1) 23%,   rgba(231,111,81,1) 100%);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  left: 10px;
+  border: 1px solid #d1654a;
+}
+
+.peach2 {
+  position: absolute;
+  background: radial-gradient(circle, rgba(244,162,97,1) 23%, rgba(244,97,60,1) 100%);
+  border-radius: 50%;
+  border: 1px solid #d1654a;
+  width: 20px;
+  height: 20px;
+  top: 12px;
+  left: 13px;
+}
+
+/******************* Kiwi CSS ************************/
+
+#kiwi{
+ transition: 0.3s ease bottom;
+}
+
+.kiwi{
+  position: absolute;
+  background-color: #a7c957;
+  border-radius: 50%;
+  border: 2px solid #7f5539;
+  width: 22px;
+  height: 22px;
+  top: 8px;
+  right: 10px;
+}
+
+.inside{
+  position: absolute; 
+  height: 13px;
+  width: 13px;
+  top: 14px;
+  right: 16.5px;
+  background-color: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.inside2{
+  position: absolute; 
+  height: 13px;
+  width: 13px;
+  top: 14px;
+  right: 16.5px;
+  background-color: rgb(226, 235, 218);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  rotate: 110deg;
+}
+
+.seed{
+  position: absolute; 
+  height: 3px;
+  width: 3px;
+  top: 13px;
+  right: 20px;
+  border-radius: 50%;
+  rotate: 45deg;
+  background-color: black;
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+.seed2{
+  position: absolute; 
+  height: 3px;
+  width: 3px;
+  top: 15px;
+  right: 16px;
+  border-radius: 50%;
+  rotate: 50deg;
+  background-color: black;
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+.seed3{
+  position: absolute; 
+  height: 2px;
+  width: 2px;
+  top: 19.75px;
+  right: 15.5px;
+  border-radius: 50%;
+  rotate: 90deg;
+  background-color: black;
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+.seed4{
+  position: absolute; 
+  height: 3px;
+  width: 3px;
+  bottom: -5.5px;
+  right: 16px;
+  border-radius: 50%;
+  rotate: -80deg;
+  background-color: black;
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+.seed5{
+  position: absolute; 
+  height: 3px;
+  width: 3px;
+  bottom: -8px;
+  right: 23.5px;
+  border-radius: 50%;
+  rotate: 45deg;
+  background-color: black;
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+.seed6{
+  position: absolute; 
+  height: 3px;
+  width: 3px;
+  bottom: -6px;
+  right: 28px;
+  border-radius: 50%;
+  rotate: 45deg;
+  background-color: black;
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+.seed7{
+  position: absolute; 
+  height: 2px;
+  width: 2px;
+  top: 19px;
+  right: 29px;
+  border-radius: 50%;
+  rotate: 90deg;
+  background-color: black;
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+.seed8{
+  position: absolute; 
+  height: 3px;
+  width: 3px;
+  top: 15px;
+  right: 28px;
+  border-radius: 50%;
+  rotate: 90deg;
+  background-color: black;
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+/************************ Toggle ***********************/
+
+#toggle_checkbox
+{
+    display: none;
+}
+
+#toggle_checkbox:checked + label
+{
+    background-color: #ccd5ae;
+}
+
+#toggle_checkbox:checked + label #peaches
+{
+    top: 3px;
+    left: 60px;
+    transform: scale(0);
+}
+
+#kiwi
+{   position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: -50px;
+    right: 2px;
+    transition: 0.3s ease bottom;
+}
+
+
+#toggle_checkbox:checked + label #kiwi
+{
+    bottom: 20px;
+}

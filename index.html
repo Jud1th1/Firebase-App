@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&family=Sigmar&display=swap" rel="stylesheet">
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="toggle.css">
     <!--Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,12 +20,42 @@
 </head>
 <body>
     <div class="container">
+        <!---Toggle Code-->
+        <input type="checkbox" id="toggle_checkbox">
+        <label for="toggle_checkbox">
+        <div id="peaches">
+            <div class="leaves"></div>
+            <div class="leaves2"></div>
+            <div class="stem"></div>
+            <div class="peach"></div>
+            <div class="peach2"></div>
+        </div>
+        <div id="kiwi">
+            <div class="kiwi"></div>
+            <div class="inside"></div>
+            <div class="inside2"></div>
+            <div class="seeds">
+            <div class="seed"></div>
+            <div class="seed2"></div>
+            <div class="seed3"></div>
+            <div class="seed4"></div>
+            <div class="seed5"></div>
+            <div class="seed6"></div>
+            <div class="seed7"></div>
+            <div class="seed8"></div>
+            </div>
+        </div>
+        </label>
+
+
+        <!--Scrimba Code Starts below-->
         <h1>CartMate</h1>
         <img src="assets/GroceryCart.png" class="image">
-        <h2><div class="poptext">Let's Shop Together</div> So You Don't Forget Anything!</h2>
-        <h3>Type the item you need below and tap on it to remove as you go along</h3>
+        <h2><div class="poptext">Let's Shop Together</div> so you don't forget anything!</h2>
         <hr>
-        <input type="text" id="input-field" placeholder="Chocolate Chip Cookies">
+        <h3>Type the item you need below and as you shop tap on the item to remove</h3>
+        
+        <input type="text" id="input-field" placeholder="Ex. Cookies">
         <button id="add-button">Add to cart</button>
         <ul id="shopping-list">
         </ul>
