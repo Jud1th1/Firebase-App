@@ -22,7 +22,7 @@
     <div class="container">
         <!---Toggle Code-->
         <input type="checkbox" id="toggle_checkbox">
-        <label for="toggle_checkbox">
+        <label for="toggle_checkbox" onclick="myToggle()">
         <div id="peaches">
             <div class="leaves"></div>
             <div class="leaves2"></div>
@@ -51,9 +51,10 @@
         <!--Scrimba Code Starts below-->
         <h1>CartMate</h1>
         <img src="assets/GroceryCart.png" class="image">
+        <img src="assets/GroceryCart Green-03.png" class="image2">
         <h2><div class="poptext">Let's Shop Together</div> so you don't forget anything!</h2>
         <hr>
-        <h3>Type the item you need below and as you shop tap on the item to remove</h3>
+        <h3>Type the item you need below and as you shop, tap on the item to remove</h3>
         
         <input type="text" id="input-field" placeholder="Ex. Cookies">
         <button id="add-button">Add to cart</button>
@@ -63,5 +64,11 @@
 
     <!--JavaScript-->
     <script src="index.js" type="module"></script>
+    <script>
+        function myToggle() {
+           var element = document.body;
+           element.classList.toggle("kiwi-mode");
+        }
+    </script>
 </body>
 </html>

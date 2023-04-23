@@ -3,8 +3,8 @@ label
 {
     display: block;
     position: absolute;
-    top: 7%;
-    right: 2%;
+    top: 2em;
+    right: 1em;
     width: 75px;
     height: 40px;
     margin: 0 auto;

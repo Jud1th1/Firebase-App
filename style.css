@@ -51,6 +51,10 @@ img {
     box-shadow: 1px 1px 2px 1px grey;
 }
 
+.image2 {
+    display: none;
+}
+
 hr{
     margin: auto;
     height: 5px;
@@ -108,6 +112,69 @@ ul li {
 }
 
 li:hover {
-    background-color: #432000;
+    background-color: #ffe8d6;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/********************* Peach Mode **************************/
+.kiwi-mode body{
+    background: linear-gradient(0deg, rgba(245,254,253,1) 31%, rgba(216,242,204,1) 100%);
+}
+
+.kiwi-mode .image{
+    display: none;
+}
+
+.kiwi-mode .image2{
+    display: block;
+    padding: 1.5em 3.5em;
+    background-color: #A7C957;
+    border-radius: 1.5em;
+    box-shadow: 1px 1px 2px 1px grey;
+}
+
+.kiwi-mode hr{
+    background-color: #776258;
+}
+
+.kiwi-mode input {
+    color: #432000;
+    background-color: #f8edeb;
+    box-shadow: 1px 1px 2px 1px #6c584c;
+}
+
+
+.kiwi-mode button{
+        color: #FDFDFD;
+        background-color: #90a955;
+}  
+
+.kiwi-mode button:hover{
+    color: #FDFDFD;
+    background-color: #6A994E;
+} 
+
+.kiwi-mode h1{
+    color: #443627;
+}
+
+.kiwi-mode h2 {
+    text-shadow: 2px 2px #dad7cd;
+    color: #443627;
+}
+
+.kiwi-mode .poptext{
+    color: #90a955;
+}
+
+.kiwi-mode h3{
+    color: #6c584c;
+}
+
+.kiwi-mode li{
+    color: #6c584c;
+}
+
+.kiwi-mode li:hover {
+        background-color: #b6ad90;
 }
